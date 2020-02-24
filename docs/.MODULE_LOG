@@ -1,0 +1,31 @@
+>>
+Script is used     : e3TemplateGenerator.bash
+Script Path        : /home/jerzy/git/e3-tools/e3TemplateGenerator
+Script Version     : 1.0.8
+Script Run Time    : 2020Feb24-1538-17CET
+User               : jerzy
+e3-tools Hash      : bf03d40
+>>
+>> git diff 
+
+>>
+>> git diff --cached
+
+>>
+>> git diff HEAD
+
+
+>>
+>> Your sources are located in https://github.com/jerzyjamroz.
+>> git submodule will be used.
+>> 
+EPICS_MODULE_NAME  : supercycleEngine
+E3_MODULE_SRC_PATH : supercycleEngine
+EPICS_MODULE_URL   : https://github.com/jerzyjamroz
+E3_TARGET_URL      : https://github.com/jerzyjamroz
+>> 
+e3 module name     : e3-supercycleEngine
+e3 module url full : https://github.com/jerzyjamroz/supercycleEngine.git
+e3 target url full : https://github.com/jerzyjamroz/e3-supercycleEngine.git
+>> 
+e3 module is located in siteMods
