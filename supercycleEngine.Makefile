@@ -56,7 +56,7 @@ APP:=supercycleEngineApp
 APPDB:=$(APP)/Db
 APPSRC:=$(APP)/src
 
-# USR_INCLUDES += -I$(where_am_I)$(APPSRC)
+USR_INCLUDES += -I$(where_am_I)$(APPSRC)
 
 # USR_CFLAGS   += -Wno-unused-variable
 # USR_CFLAGS   += -Wno-unused-function
@@ -65,11 +65,14 @@ APPSRC:=$(APP)/src
 # USR_CPPFLAGS += -Wno-unused-function
 # USR_CPPFLAGS += -Wno-unused-but-set-variable
 
+USR_CXXFLAGS += -std=c++11 -g -Wall -Wextra -Wno-deprecated-declarations
+
+
 # TEMPLATES += $(wildcard $(APPDB)/*.db)
 # TEMPLATES += $(wildcard $(APPDB)/*.db)
 # TEMPLATES += $(wildcard $(APPDB)/*.proto)
 # TEMPLATES += $(wildcard $(APPDB)/*.template)
-
+TEMPLATES += $(wildcard $(APPDB)/*.db)
 
 # DBDINC_SRCS += $(APPSRC)/swaitRecord.c
 # DBDINC_SRCS += $(APPSRC)/sseqRecord.c
@@ -105,9 +108,31 @@ APPSRC:=$(APP)/src
 # # DBDINC_SRCS should be last of the series of SOURCES
 # SOURCES += $(DBDINC_SRCS)
 
+#SOURCES += $(APPSRC)/devAiSecond.c
+SOURCES += $(APPSRC)/cmnbase.cpp
+SOURCES += $(APPSRC)/dbuf.cpp
+SOURCES += $(APPSRC)/json.cpp
+SOURCES += $(APPSRC)/csv.cpp
+SOURCES += $(APPSRC)/ioblock.cpp
+SOURCES += $(APPSRC)/seq.cpp
+SOURCES += $(APPSRC)/engine.cpp
+ # Devs
+SOURCES += $(APPSRC)/devEngine.cpp
+SOURCES += $(APPSRC)/devASubBuf.cpp
+SOURCES += $(APPSRC)/devStringoutCtrl.cpp
+ # Env last
+SOURCES += $(APPSRC)/iocVars.cpp
+SOURCES += $(APPSRC)/engineInit.cpp
+
 # DBDS += $(APPSRC)/calcSupport_LOCAL.dbd
 # DBDS += $(APPSRC)/calcSupport_withSNCSEQ.dbd
 # DBDS += $(APPSRC)/calcSupport_withSSCAN.dbd
+
+# DBDS += $(APPSRC)/aiSecond.dbd
+# DBDS += $(APPSRC)/base.dbd
+DBDS += $(APPSRC)/engine.dbd
+DBDS += $(APPSRC)/devASubBuf.dbd
+DBDS += $(APPSRC)/devStringoutCtrl.dbd
 
 #
 # $(DBDINC_DEPS): $(DBDINC_HDRS)
@@ -154,6 +179,7 @@ APPSRC:=$(APP)/src
 # USR_LDFLAGS += -lethercat
 # USR_LDFLAGS += -Wl,-rpath=/opt/etherlab/lib
 
+
 ## SYSTEM LIBS
 ##
 # USR_LIBS += boost_regex
@@ -169,8 +195,8 @@ APPSRC:=$(APP)/src
 # endif
 
 # LIB_SYS_LIBS += xml2
-
-
+# USR_SYS_LIBS += jsoncpp
+LIB_SYS_LIBS += jsoncpp
 #
 
 #
