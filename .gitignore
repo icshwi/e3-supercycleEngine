@@ -1,4 +1,4 @@
-*~  
+*~
 *-dev
 modules.order
 Module.symvers
@@ -14,3 +14,4 @@ core.*
 *PVs.list
 *-loc/*.Makefile
 supercycleEngine/*.Makefile
+.vscode
