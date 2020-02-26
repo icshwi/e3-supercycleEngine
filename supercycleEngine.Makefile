@@ -117,6 +117,7 @@ SOURCES += $(APPSRC)/ioblock.cpp
 SOURCES += $(APPSRC)/seq.cpp
 SOURCES += $(APPSRC)/engine.cpp
 SOURCES += $(APPSRC)/dlog.cpp
+SOURCES += $(APPSRC)/scenv.cpp
  # Devs
 SOURCES += $(APPSRC)/devEngine.cpp
 SOURCES += $(APPSRC)/devASubBuf.cpp
