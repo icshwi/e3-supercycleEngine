@@ -65,8 +65,7 @@ USR_INCLUDES += -I$(where_am_I)$(APPSRC)
 # USR_CPPFLAGS += -Wno-unused-function
 # USR_CPPFLAGS += -Wno-unused-but-set-variable
 
-USR_CXXFLAGS += -std=c++11 -g3 -Wall -Wextra -Wno-deprecated-declarations -O0
-
+USR_CXXFLAGS += -std=c++11 -g3 -Wall -Wextra -Wno-deprecated-declarations
 
 # TEMPLATES += $(wildcard $(APPDB)/*.db)
 # TEMPLATES += $(wildcard $(APPDB)/*.db)
