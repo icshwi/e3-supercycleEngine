@@ -1,0 +1,14 @@
+# .init.iocsh
+# ===========
+
+dbLoadRecords("engine.db",       "P=$(P), PG=$(PG), EVCEND=$(EVT_CEND)")
+dbLoadRecords("engineCtrl.db",   "P=$(P)")
+
+mapStrOut("databufferLink", "$(DBUFL)")
+mapStrOut("mevtsLink", "$(MEVTSL)")
+mapStrOut("sctableRoot", "$(SCTROOT)")
+
+var iodebug 4
+#var PscUs 888
+
+#EOF

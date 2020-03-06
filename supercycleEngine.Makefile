@@ -108,6 +108,8 @@ TEMPLATES += $(wildcard $(APPDB)/*.db)
 # SOURCES += $(DBDINC_SRCS)
 
 #SOURCES += $(APPSRC)/devAiSecond.c
+
+# SRC libraries
 SOURCES += $(APPSRC)/cmnbase.cpp
 SOURCES += $(APPSRC)/dbuf.cpp
 SOURCES += $(APPSRC)/json.cpp
@@ -117,13 +119,13 @@ SOURCES += $(APPSRC)/seq.cpp
 SOURCES += $(APPSRC)/engine.cpp
 SOURCES += $(APPSRC)/dlog.cpp
 SOURCES += $(APPSRC)/scenv.cpp
- # Devs
+# Devs
 SOURCES += $(APPSRC)/devEngine.cpp
 SOURCES += $(APPSRC)/devASubBuf.cpp
 SOURCES += $(APPSRC)/devStringoutCtrl.cpp
- # Env last
+SOURCES += $(APPSRC)/cmdMapStrOut.cpp
+# Env last
 SOURCES += $(APPSRC)/iocVars.cpp
-SOURCES += $(APPSRC)/engineInit.cpp
 
 # DBDS += $(APPSRC)/calcSupport_LOCAL.dbd
 # DBDS += $(APPSRC)/calcSupport_withSNCSEQ.dbd
@@ -132,8 +134,7 @@ SOURCES += $(APPSRC)/engineInit.cpp
 # DBDS += $(APPSRC)/aiSecond.dbd
 # DBDS += $(APPSRC)/base.dbd
 DBDS += $(APPSRC)/engine.dbd
-DBDS += $(APPSRC)/devASubBuf.dbd
-DBDS += $(APPSRC)/devStringoutCtrl.dbd
+DBDS += $(APPSRC)/devs.dbd
 
 #
 # $(DBDINC_DEPS): $(DBDINC_HDRS)
