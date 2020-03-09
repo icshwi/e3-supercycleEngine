@@ -17,8 +17,8 @@ epicsEnvSet("DBUFL",    "$(TOP)/../reftabs/init/databuffer-ess.json")
 epicsEnvSet("MEVTSL",   "$(TOP)/../reftabs/init/mevts-ess.json")
 epicsEnvSet("SCTROOT",  "$(TOP)/../reftabs/supercycles/")
 
-require("mrfioc2","2.2.0-rc7")
-require("supercycleEngine","master")
+require "mrfioc2" "2.2.0-rc7"
+require "supercycleEngine" "master"
 
 ## Load record instances
 

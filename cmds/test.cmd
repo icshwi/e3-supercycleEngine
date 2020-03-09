@@ -1,3 +1,0 @@
-require supercycleEngine, master
-
-iocInit()
