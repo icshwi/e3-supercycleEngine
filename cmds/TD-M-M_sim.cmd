@@ -17,7 +17,7 @@ epicsEnvSet "DBUFL"     "$(TOP)/../reftabs/init/databuffer-ess.json"
 epicsEnvSet "MEVTSL"    "$(TOP)/../reftabs/init/mevts-ess.json"
 epicsEnvSet "SCTROOT"   "$(TOP)/../reftabs/supercycles/"
 
-require "supercycleEngine" "master"
+require "supercycleEngine" "develop"
 
 ## Load record instances
 
