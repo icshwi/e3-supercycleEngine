@@ -2,11 +2,13 @@
 # ===========
 
 dbLoadRecords "engine.db"       "P=$(P), PG=$(PG), EVCEND=$(EVT_CEND)"
-dbLoadRecords "engineCtrl.db"   "P=$(P)"
+dbLoadRecords "seq.db"          "P=$(P), PG=$(PG)"
+dbLoadRecords "ctrl.db"         "P=$(P)"
+dbLoadRecords "io.db"           "P=$(P)"
 
-mapStrOut "databufferLink"  "$(DBUFL)"
-mapStrOut "mevtsLink"       "$(MEVTSL)"
-mapStrOut "sctableRoot"     "$(SCTROOT)"
+mapStrOut "databufferLink"      "$(DBUFL)"
+mapStrOut "mevtsLink"           "$(MEVTSL)"
+mapStrOut "sctableRoot"         "$(SCTROOT)"
 
 var iodebug 4
 #var PscUs 888
