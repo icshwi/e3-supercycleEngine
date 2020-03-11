@@ -1,8 +1,8 @@
 # .init.iocsh
 # ===========
 
-dbLoadRecords "engine.db"       "P=$(P), PG=$(PG), EVCEND=$(EVT_CEND)"
-dbLoadRecords "seq.db"          "P=$(P), PG=$(PG)"
+dbLoadRecords "engine.db"       "P=$(P)"
+dbLoadRecords "gplug.db"        "P=$(P), PG=$(PG), EVCEND=$(EVT_CEND)"
 dbLoadRecords "ctrl.db"         "P=$(P)"
 dbLoadRecords "io.db"           "P=$(P)"
 
