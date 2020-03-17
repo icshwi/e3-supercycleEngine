@@ -2,7 +2,7 @@
 # ===========
 
 dbLoadRecords "engine.db"       "P=$(P)"
-dbLoadRecords "gplug.db"        "P=$(P), PG=$(PG), EVCEND=$(EVT_CEND)"
+dbLoadRecords "gplug.db"        "P=$(P), PG=$(PG), EVCEND=17"
 dbLoadRecords "ctrl.db"         "P=$(P)"
 dbLoadRecords "io.db"           "P=$(P)"
 

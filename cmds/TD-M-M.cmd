@@ -1,4 +1,6 @@
-# Init environment
+require "mrfioc2" "2.2.0-rc7"
+require "supercycleEngine" "develop"
+
 epicsEnvSet "TOP" "$(E3_CMD_TOP)/.."
 iocshLoad "$(TOP)/iocsh/mtca.iocsh"
 iocshLoad "$(TOP)/iocsh/ts.iocsh"
@@ -13,11 +15,10 @@ epicsEnvSet "DBUFL"    "$(TOP)/../reftabs/init/databuffer-ess.json"
 epicsEnvSet "MEVTSL"   "$(TOP)/../reftabs/init/mevts-ess.json"
 epicsEnvSet "SCTROOT"  "$(TOP)/../reftabs/supercycles/"
 
-require "mrfioc2" "2.2.0-rc7"
-require "supercycleEngine" "develop"
-
 ## Load record instances
-iocshLoad "$(TOP)/iocsh/evm.iocsh"      "P=MTCA5U,  DEV=EVG,   PCIID=$(MTCA_5U_PCIID7)"
+#epicsEnvSet "MTCA_9U_PCIID2"  "0e:00.0"
+#epicsEnvSet "MTCA_5U_PCIID7" "08:00.0"
+iocshLoad "$(TOP)/iocsh/evm.iocsh"      "P=MTCA5U,  DEV=EVG,   PCIID=$(MTCA_5U_PCIID7=08:00.0)"
 iocshLoad "$(TOP)/iocsh/sce.iocsh"      "P=$(PSCE), PG=$(PEVG)"
 
 iocInit

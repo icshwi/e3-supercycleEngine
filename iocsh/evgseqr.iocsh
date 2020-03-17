@@ -20,16 +20,16 @@ dbpf $(P)$(R=)$(S=:)SoftSeq2-Disable-Cmd "1"
 dbpf $(P)$(R=)$(S=:)SoftSeq2-Unload-Cmd "1"
 
 # Null sequence0
-dbpf $(P)$(R=)$(S=:)SoftSeq0-EvtCode-SP "$(EVT_SEQ_END)"
+dbpf $(P)$(R=)$(S=:)SoftSeq0-EvtCode-SP "$(EVT_SEQ_END=127)"
 dbpf $(P)$(R=)$(S=:)SoftSeq0-Timestamp-SP "1000"
 dbpf $(P)$(R=)$(S=:)SoftSeq0-Commit-Cmd "1"
 dbpf $(P)$(R=)$(S=:)SoftSeq0-Enable-Cmd "1"
 
 # Master Event Rate 14 Hz
 dbpf $(P)$(R=)$(S=:)Mxc0-Polarity-Sel "Orginal"
-dbpf $(P)$(R=)$(S=:)Mxc0-Prescaler-SP "$(MXC_14HZ)"
+dbpf $(P)$(R=)$(S=:)Mxc0-Prescaler-SP "$(MXC_14HZ=6289464)"
 # EVT_14HZ as the cycle fiducial mark
-dbpf $(P)$(R=)$(S=:)TrigEvt0-EvtCode-SP "$(EVT_14HZ)"
+dbpf $(P)$(R=)$(S=:)TrigEvt0-EvtCode-SP "$(EVT_14HZ=6289464)"
 dbpf $(P)$(R=)$(S=:)TrigEvt0-TrigSrc-Sel "Mxc0"
 
 #EOF
