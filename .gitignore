@@ -12,6 +12,7 @@ core.*
 .cvsignore
 *_old/
 *PVs.list
+*.pvlist
 *-loc/*.Makefile
 supercycleEngine/*.Makefile
 .vscode

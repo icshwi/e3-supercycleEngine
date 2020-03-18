@@ -1,26 +1,24 @@
-require "mrfioc2"           "2.2.0-rc7"
+require "mrfioc2"           "develop"
 require "supercycleEngine"  "develop"
 
 epicsEnvSet "PSCE"          "TD-M:TS-SCE-01"
 epicsEnvSet "PEVG"          "TD-M:TS-EVG-01"
-
-epicsEnvUnset "PEVG"
-epicsEnvSet "PEVG"          "MTCA5U-EVG"
 
 epicsEnvSet "DBUFL"         "../reftabs/init/databuffer-ess.json"
 epicsEnvSet "MEVTSL"        "../reftabs/init/mevts-ess.json"
 epicsEnvSet "SCTROOT"       "../reftabs/supercycles/"
 
 # Load environment
-iocshLoad "mtca.iocsh"
-iocshLoad "ts.iocsh"
+iocshLoad "$(mrfioc2_DIR)/mtca.iocsh"
+iocshLoad "$(mrfioc2_DIR)/ts.iocsh"
 # Load record instances
-iocshLoad "evm.iocsh"       "P=MTCA5U,  DEV=EVG,   PCIID=$(MTCA_5U_PCIID7)"
-iocshLoad "sce.iocsh"       "P=$(PSCE), PG=$(PEVG)"
+iocshLoad "$(mrfioc2_DIR)/evm.iocsh"                "P=$(PEVG), OBJ=EVG,   PCIID=$(MTCA_5U_PCIID7), U=:EVRU-, D=:EVRD-"
+iocshLoad "$(supercycleEngine_DIR)/sce.iocsh"       "P=$(PSCE), PG=$(PEVG)"
 
 iocInit
 
-iocshLoad "evgr.iocsh"      "P=$(PEVG), INTRF=, INTPPS="
-iocshLoad "evgseqr.iocsh"   "P=$(PEVG)"
+iocshLoad "$(mrfioc2_DIR)/evgr.iocsh"               "P=$(PEVG), INTRF=, INTPPS="
+iocshLoad "$(mrfioc2_DIR)/evgasynr.iocsh"           "P=$(PEVG), U=:EVRU-"
+iocshLoad "$(supercycleEngine_DIR)/evgseqr.iocsh"   "P=$(PEVG)"
 
 dbl > "TD-M-M.pvlist"

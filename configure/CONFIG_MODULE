@@ -1,12 +1,11 @@
 #
 EPICS_MODULE_NAME:=supercycleEngine
-
 EPICS_MODULE_TAG:=master
 #
-E3_MODULE_VERSION:=master
+E3_MODULE_VERSION:=develop
 
 # DEPENDENT MODULE VERSION
-# For Example, 
+# For Example,
 #DEVLIB2_DEP_VERSION:=2.9.0
 #ASYN_DEP_VERSION:=4.36.0
 #PCRE_DEP_VERSION:=8.41.0
@@ -17,7 +16,7 @@ E3_MODULE_VERSION:=master
 #SIS8300DRV_DEP_VERSION=4.3.1
 #SEQUENCER_DEP_VERSION=2.2.7
 #
-# 
+#
 #E3_KMOD_SRC_PATH:=$(E3_MODULE_SRC_PATH)
 #
 # In most case, we don't need to touch the following variables.

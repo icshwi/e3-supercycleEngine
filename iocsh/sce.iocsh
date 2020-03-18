@@ -10,7 +10,7 @@ mapStrOut "databufferLink"      "$(DBUFL)"
 mapStrOut "mevtsLink"           "$(MEVTSL)"
 mapStrOut "sctableRoot"         "$(SCTROOT)"
 
-var iodebug 4
+var "iodebug" "4"
 #var PscUs 888
 
 #EOF
