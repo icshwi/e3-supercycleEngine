@@ -1,4 +1,4 @@
 [submodule "supercycleEngine"]
 	path = supercycleEngine
 	url = https://github.com/icshwi/supercycleEngine.git
-	ignore = dirty
+	ignore = all

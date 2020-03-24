@@ -1,5 +1,5 @@
-require "mrfioc2"           "develop"
-require "supercycleEngine"  "develop"
+require "mrfioc2"           "master"
+require "supercycleEngine"  "master"
 
 epicsEnvSet "PSCE"          "TD-M:TS-SCE-01"
 epicsEnvSet "PEVG"          "TD-M:TS-EVG-01"
