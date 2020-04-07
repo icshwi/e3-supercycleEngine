@@ -171,13 +171,13 @@ DBDS += $(APPSRC)/devs.dbd
 # USR_LIBS += readline
 # USR_LIBS += xml2
 
-# ifeq ($(T_A),linux-ppc64e6500)
-# USR_INCLUDES += -I$(SDKTARGETSYSROOT)/usr/include/libxml2
-# else ifeq ($(T_A),linux-corei7-poky)
-# USR_INCLUDES += -I$(SDKTARGETSYSROOT)/usr/include/libxml2
-# else
-# USR_INCLUDES += -I/usr/include/libxml2
-# endif
+ifeq ($(T_A),linux-ppc64e6500)
+USR_INCLUDES += -I$(SDKTARGETSYSROOT)/usr/include/jsoncpp
+else ifeq ($(T_A),linux-corei7-poky)
+USR_INCLUDES += -I$(SDKTARGETSYSROOT)/usr/include/jsoncpp
+else
+USR_INCLUDES += -I/usr/include/jsoncpp
+endif
 
 # LIB_SYS_LIBS += xml2
 # USR_SYS_LIBS += jsoncpp
