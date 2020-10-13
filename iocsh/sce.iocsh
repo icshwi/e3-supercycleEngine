@@ -3,8 +3,9 @@
 
 dbLoadRecords "engine.db"       "P=$(P)"
 dbLoadRecords "gplug.db"        "P=$(P), PG=$(PG), EVCEND=17"
-dbLoadRecords "ctrl.db"         "P=$(P)"
 dbLoadRecords "io.db"           "P=$(P)"
+dbLoadRecords "iosingle.db"     "P=$(P)"
+dbLoadRecords "ctrl.db"         "P=$(P)"
 
 mapStrOut "databufferLink"      "$(DBUFL)"
 mapStrOut "mevtsLink"           "$(MEVTSL)"
