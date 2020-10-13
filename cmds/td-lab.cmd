@@ -1,6 +1,6 @@
 # .cmd
 #require "iocstats" 
-require "mrfioc2" "2.2.1rc1"
+require "mrfioc2" "master"
 require "supercycleEngine" "master"
 
 epicsEnvSet "TOP" "$(E3_CMD_TOP)/.."
