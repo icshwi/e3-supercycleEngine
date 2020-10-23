@@ -164,7 +164,9 @@ DBDS += $(APPSRC)/devs.dbd
 # USR_LDFLAGS += -L /opt/etherlab/lib
 # USR_LDFLAGS += -lethercat
 # USR_LDFLAGS += -Wl,-rpath=/opt/etherlab/lib
-
+USR_LDFLAGS += -L /usr/local/lib
+USR_LDFLAGS += -lyaml-cpp
+USR_LDFLAGS += -Wl,-rpath=/usr/local/lib
 
 ## SYSTEM LIBS
 ##
@@ -173,17 +175,17 @@ DBDS += $(APPSRC)/devs.dbd
 # USR_LIBS += xml2
 
 ifeq ($(T_A),linux-ppc64e6500)
-USR_INCLUDES += -I$(SDKTARGETSYSROOT)/usr/include/jsoncpp -I$(SDKTARGETSYSROOT)/usr/include/yaml-cpp
+USR_INCLUDES += -I$(SDKTARGETSYSROOT)/usr/include/jsoncpp -I$(SDKTARGETSYSROOT)/usr/local/include/yaml-cpp
 else ifeq ($(T_A),linux-corei7-poky)
-USR_INCLUDES += -I$(SDKTARGETSYSROOT)/usr/include/jsoncpp -I$(SDKTARGETSYSROOT)/usr/include/yaml-cpp
+USR_INCLUDES += -I$(SDKTARGETSYSROOT)/usr/include/jsoncpp -I$(SDKTARGETSYSROOT)/usr/local/include/yaml-cpp
 else
-USR_INCLUDES += -I/usr/include/jsoncpp -I/usr/include/yaml-cpp
+USR_INCLUDES += -I/usr/include/jsoncpp -I/usr/local/include/yaml-cpp
 endif
 
-# LIB_SYS_LIBS += xml2
-# USR_SYS_LIBS += jsoncpp
+## LIB_SYS_LIBS += xml2
+## USR_SYS_LIBS += jsoncpp
 LIB_SYS_LIBS += jsoncpp
-LIB_SYS_LIBS += yaml-cpp
+# LIB_SYS_LIBS += yaml-cpp
 #
 
 #
