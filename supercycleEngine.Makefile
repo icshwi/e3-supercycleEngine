@@ -96,6 +96,7 @@ TEMPLATES += $(wildcard $(APPDB)/*.db)
 SOURCES += $(APPSRC)/cmnbase.cpp
 SOURCES += $(APPSRC)/dbuf.cpp
 SOURCES += $(APPSRC)/json.cpp
+SOURCES += $(APPSRC)/yml.cpp
 SOURCES += $(APPSRC)/csv.cpp
 SOURCES += $(APPSRC)/ioblock.cpp
 SOURCES += $(APPSRC)/seq.cpp
@@ -172,16 +173,17 @@ DBDS += $(APPSRC)/devs.dbd
 # USR_LIBS += xml2
 
 ifeq ($(T_A),linux-ppc64e6500)
-USR_INCLUDES += -I$(SDKTARGETSYSROOT)/usr/include/jsoncpp
+USR_INCLUDES += -I$(SDKTARGETSYSROOT)/usr/include/jsoncpp -I$(SDKTARGETSYSROOT)/usr/include/yaml-cpp
 else ifeq ($(T_A),linux-corei7-poky)
-USR_INCLUDES += -I$(SDKTARGETSYSROOT)/usr/include/jsoncpp
+USR_INCLUDES += -I$(SDKTARGETSYSROOT)/usr/include/jsoncpp -I$(SDKTARGETSYSROOT)/usr/include/yaml-cpp
 else
-USR_INCLUDES += -I/usr/include/jsoncpp
+USR_INCLUDES += -I/usr/include/jsoncpp -I/usr/include/yaml-cpp
 endif
 
 # LIB_SYS_LIBS += xml2
 # USR_SYS_LIBS += jsoncpp
 LIB_SYS_LIBS += jsoncpp
+LIB_SYS_LIBS += yaml-cpp
 #
 
 #
