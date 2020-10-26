@@ -164,8 +164,8 @@ DBDS += $(APPSRC)/devs.dbd
 # USR_LDFLAGS += -L /opt/etherlab/lib
 # USR_LDFLAGS += -lethercat
 # USR_LDFLAGS += -Wl,-rpath=/opt/etherlab/lib
-USR_LDFLAGS += -L /usr/local/lib
-USR_LDFLAGS += -lyaml-cpp
+#USR_LDFLAGS += -L /usr/local/lib
+#USR_LDFLAGS += -lyaml-cpp
 USR_LDFLAGS += -Wl,-rpath=/usr/local/lib
 
 ## SYSTEM LIBS
@@ -185,7 +185,7 @@ endif
 ## LIB_SYS_LIBS += xml2
 ## USR_SYS_LIBS += jsoncpp
 LIB_SYS_LIBS += jsoncpp
-# LIB_SYS_LIBS += yaml-cpp
+LIB_SYS_LIBS += yaml-cpp
 #
 
 #
