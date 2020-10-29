@@ -6,6 +6,7 @@ dbLoadRecords "gplug.db"        "P=$(P), PG=$(PG), EVCEND=17"
 dbLoadRecords "io.db"           "P=$(P)"
 dbLoadRecords "iosingle.db"     "P=$(P)"
 dbLoadRecords "ctrl.db"         "P=$(P)"
+dbLoadRecords "states.db"       "P=$(P)"
 
 mapStrOut "databufferLink"      "$(DBUFL)"
 mapStrOut "mevtsLink"           "$(MEVTSL)"

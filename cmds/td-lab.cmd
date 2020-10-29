@@ -1,7 +1,7 @@
 # .cmd
-#require "iocstats" 
+#require "iocstats"
 require "mrfioc2" "master"
-require "supercycleEngine" "master"
+require "supercycleEngine" "devel"
 
 epicsEnvSet "TOP" "$(E3_CMD_TOP)/.."
 
@@ -13,7 +13,7 @@ epicsEnvSet "PEVG"          "TD-L5U1:Ctrl-EVG-1"
 epicsEnvSet "reftabs_DIR"   "/opt/reftabs"
 
 epicsEnvSet "DBUFL"         "$(reftabs_DIR)/init/databuffer-ess.json"
-epicsEnvSet "MEVTSL"        "$(reftabs_DIR)/init/mevts-ess.json"
+epicsEnvSet "MEVTSL"        "$(reftabs_DIR)/init/mevts-ess.yml"
 epicsEnvSet "SCTROOT"       "$(reftabs_DIR)/supercycles/"
 
 # Load record instances
