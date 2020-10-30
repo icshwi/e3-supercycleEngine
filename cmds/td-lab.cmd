@@ -12,7 +12,7 @@ epicsEnvSet "PSCE"          "TD-L5U1:Ctrl-SCE-1"
 epicsEnvSet "PEVG"          "TD-L5U1:Ctrl-EVG-1"
 epicsEnvSet "reftabs_DIR"   "/opt/reftabs"
 
-epicsEnvSet "DBUFL"         "$(reftabs_DIR)/init/databuffer-ess.json"
+epicsEnvSet "DBUFL"         "$(reftabs_DIR)/init/databuffer-ess.yml"
 epicsEnvSet "MEVTSL"        "$(reftabs_DIR)/init/mevts-ess.yml"
 epicsEnvSet "SCTROOT"       "$(reftabs_DIR)/supercycles/"
 
