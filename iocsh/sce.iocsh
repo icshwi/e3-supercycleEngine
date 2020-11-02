@@ -1,18 +1,16 @@
-# .init.iocsh
+#!
 # ===========
 
 dbLoadRecords "engine.db"       "P=$(P)"
 dbLoadRecords "gplug.db"        "P=$(P), PG=$(PG)"
 dbLoadRecords "io.db"           "P=$(P)"
-dbLoadRecords "iosingle.db"     "P=$(P)"
+dbLoadRecords "iofbk.db"        "P=$(P)"
 dbLoadRecords "ctrl.db"         "P=$(P)"
 dbLoadRecords "states.db"       "P=$(P)"
 
-mapStrOut "databufferLink"      "$(DBUFL)"
-mapStrOut "mevtsLink"           "$(MEVTSL)"
-mapStrOut "sctableRoot"         "$(SCTROOT)"
+mapStrOut "databufferLink"      "$(DBUFL=$(reftabs_DIR=/opt/reftabs)/init/databuffer-ess.yml)"
+mapStrOut "mevtsLink"           "$(MEVTSL=$(reftabs_DIR=/opt/reftabs)/init/mevts-ess.yml)"
+mapStrOut "sctableRoot"         "$(reftabs_DIR=/opt/reftabs)/supercycles"
 
-var "iodebug" "4"
+#var "iodebug" "4"
 #var PscUs 888
-
-#EOF
