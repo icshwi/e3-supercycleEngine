@@ -71,7 +71,6 @@ TEMPLATES += $(wildcard $(APPDB)/*.db)
 # HEADERS += $(APPSRC)/aCalcPostfix.h
 # HEADERS += $(DBDINC_HDRS)
 
-
 # SOURCES += $(APPSRC)/sCalcPostfix.c
 # SOURCES += $(APPSRC)/sCalcPerform.c
 # SOURCES += $(APPSRC)/aCalcPostfix.c
@@ -109,6 +108,14 @@ SOURCES += $(APPSRC)/devStringoutCtrl.cpp
 SOURCES += $(APPSRC)/cmdMapStrOut.cpp
 # Env last
 SOURCES += $(APPSRC)/iocVars.cpp
+
+HEADERS += $(APPSRC)/version.h
+
+#flashiocsh$(DEP): version.h
+
+version.h:
+	$(RM) $@
+	$(PERL) -I$(EPICS_BASE)/lib/perl $(where_am_I)$(APPSRC)/genVersionHeader.pl -t "" -V $(E3_MODULE_VERSION) -N SCE_VERSION $(where_am_I)$(APPSRC)/$@
 
 # DBDS += $(APPSRC)/calcSupport_LOCAL.dbd
 # DBDS += $(APPSRC)/calcSupport_withSNCSEQ.dbd
