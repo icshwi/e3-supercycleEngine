@@ -111,9 +111,10 @@ SOURCES += $(APPSRC)/iocVars.cpp
 
 HEADERS += $(APPSRC)/version.h
 
-#flashiocsh$(DEP): version.h
+iocVars$(DEP): version.h
 
 version.h:
+	$(info ************  version.h ************)
 	$(RM) $@
 	$(PERL) -I$(EPICS_BASE)/lib/perl $(where_am_I)$(APPSRC)/genVersionHeader.pl -t "" -V $(E3_MODULE_VERSION) -N SCE_VERSION $(where_am_I)$(APPSRC)/$@
 
