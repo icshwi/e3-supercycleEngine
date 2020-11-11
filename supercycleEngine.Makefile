@@ -101,6 +101,8 @@ SOURCES += $(APPSRC)/seq.cpp
 SOURCES += $(APPSRC)/engine.cpp
 SOURCES += $(APPSRC)/dlog.cpp
 SOURCES += $(APPSRC)/scenv.cpp
+SOURCES += $(APPSRC)/sce.cpp
+SOURCES += $(APPSRC)/object.cpp
 # Devs
 SOURCES += $(APPSRC)/devEngine.cpp
 SOURCES += $(APPSRC)/devASubBuf.cpp
@@ -126,6 +128,7 @@ version.h:
 # DBDS += $(APPSRC)/base.dbd
 DBDS += $(APPSRC)/engine.dbd
 DBDS += $(APPSRC)/devs.dbd
+DBDS += $(APPSRC)/sce.dbd
 
 #
 # $(DBDINC_DEPS): $(DBDINC_HDRS)
