@@ -108,6 +108,7 @@ SOURCES += $(APPSRC)/devEngine.cpp
 SOURCES += $(APPSRC)/devASubBuf.cpp
 SOURCES += $(APPSRC)/devStringoutCtrl.cpp
 SOURCES += $(APPSRC)/cmdMapStrOut.cpp
+SOURCES += $(APPSRC)/devObjStringIO.cpp
 # Env last
 SOURCES += $(APPSRC)/iocVars.cpp
 

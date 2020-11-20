@@ -12,5 +12,5 @@ mapStrOut "databufferLink"      "$(DBUFL=$(reftabs_DIR=/opt/reftabs)/init/databu
 mapStrOut "mevtsLink"           "$(MEVTSL=$(reftabs_DIR=/opt/reftabs)/init/mevts-ess.yml)"
 mapStrOut "sctableRoot"         "$(reftabs_DIR=/opt/reftabs)/supercycles"
 
-#var "iodebug" "4"
+var "iodebug" "4"
 #var PscUs 888
