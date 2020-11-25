@@ -92,23 +92,24 @@ TEMPLATES += $(wildcard $(APPDB)/*.db)
 #SOURCES += $(APPSRC)/devAiSecond.c
 
 # SRC libraries
-SOURCES += $(APPSRC)/cmnbase.cpp
-SOURCES += $(APPSRC)/dbuf.cpp
-SOURCES += $(APPSRC)/yml.cpp
-SOURCES += $(APPSRC)/csv.cpp
-SOURCES += $(APPSRC)/ioblock.cpp
-SOURCES += $(APPSRC)/seq.cpp
-SOURCES += $(APPSRC)/engine.cpp
-SOURCES += $(APPSRC)/dlog.cpp
+SOURCES += $(APPSRC)/dlog/dlog.cpp
+SOURCES += $(APPSRC)/cmn/cmnbase.cpp
+SOURCES += $(APPSRC)/sce/dbuf.cpp
+SOURCES += $(APPSRC)/sce/seq.cpp
+SOURCES += $(APPSRC)/sce/sce.cpp
+SOURCES += $(APPSRC)/sce/engine.cpp
+SOURCES += $(APPSRC)/io/iobase.cpp
+SOURCES += $(APPSRC)/io/yml.cpp
+SOURCES += $(APPSRC)/io/csv.cpp
+SOURCES += $(APPSRC)/io/ioblock.cpp
 SOURCES += $(APPSRC)/scenv.cpp
-SOURCES += $(APPSRC)/sce.cpp
 SOURCES += $(APPSRC)/object.cpp
 # Devs
 SOURCES += $(APPSRC)/devEngine.cpp
 SOURCES += $(APPSRC)/devASubBuf.cpp
 SOURCES += $(APPSRC)/devStringoutCtrl.cpp
 SOURCES += $(APPSRC)/cmdMapStrOut.cpp
-SOURCES += $(APPSRC)/devObjStringIO.cpp
+SOURCES += $(APPSRC)/devObjPropStringIO.cpp
 # Env last
 SOURCES += $(APPSRC)/iocVars.cpp
 
@@ -116,7 +117,7 @@ HEADERS += $(APPSRC)/version.h
 
 iocVars$(DEP): version.h
 
-version.h:
+version.h: 
 	$(info ************  version.h ************)
 	$(RM) $@
 	$(PERL) -I$(EPICS_BASE)/lib/perl $(where_am_I)$(APPSRC)/genVersionHeader.pl -t "" -V $(E3_MODULE_VERSION) -N SCE_VERSION $(where_am_I)$(APPSRC)/$@
@@ -127,9 +128,7 @@ version.h:
 
 # DBDS += $(APPSRC)/aiSecond.dbd
 # DBDS += $(APPSRC)/base.dbd
-DBDS += $(APPSRC)/engine.dbd
 DBDS += $(APPSRC)/devs.dbd
-DBDS += $(APPSRC)/sce.dbd
 
 #
 # $(DBDINC_DEPS): $(DBDINC_HDRS)

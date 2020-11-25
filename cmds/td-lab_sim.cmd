@@ -9,7 +9,7 @@ epicsEnvSet "PSCE" "TD-L5U1:Ctrl-SCE-1"
 epicsEnvSet "PEVG" "TD-L5U1:Ctrl-EVG-1"
 
 # Load record instances
-dbLoadRecords "db/devg.db" "P=$(PEVG)"
+dbLoadRecords "$(TOP)/db/devg.db" "P=$(PEVG)"
 iocshLoad     "$(supercycleEngine_DIR)/sce.iocsh"   "P=$(PSCE), PG=$(PEVG)"
 #var "iodebug" "3"
 iocInit
