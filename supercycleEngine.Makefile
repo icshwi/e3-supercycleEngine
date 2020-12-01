@@ -98,29 +98,30 @@ SOURCES += $(APPSRC)/sce/dbuf.cpp
 SOURCES += $(APPSRC)/sce/seq.cpp
 SOURCES += $(APPSRC)/sce/sce.cpp
 SOURCES += $(APPSRC)/sce/engine.cpp
+SOURCES += $(APPSRC)/sce/scenv.cpp
 SOURCES += $(APPSRC)/io/iobase.cpp
 SOURCES += $(APPSRC)/io/yml.cpp
 SOURCES += $(APPSRC)/io/csv.cpp
 SOURCES += $(APPSRC)/io/ioblock.cpp
-SOURCES += $(APPSRC)/scenv.cpp
-SOURCES += $(APPSRC)/object.cpp
 # Devs
-SOURCES += $(APPSRC)/devEngine.cpp
-SOURCES += $(APPSRC)/devASubBuf.cpp
-SOURCES += $(APPSRC)/devStringoutCtrl.cpp
-SOURCES += $(APPSRC)/cmdMapStrOut.cpp
-SOURCES += $(APPSRC)/devObjPropStringIO.cpp
+SOURCES += $(APPSRC)/dev/object.cpp
+SOURCES += $(APPSRC)/dev/devEngine.cpp
+SOURCES += $(APPSRC)/dev/devASubBuf.cpp
+SOURCES += $(APPSRC)/dev/devStringoutCtrl.cpp
+SOURCES += $(APPSRC)/dev/cmdMapStrOut.cpp
+SOURCES += $(APPSRC)/dev/devObjPropStringIO.cpp
 # Env last
-SOURCES += $(APPSRC)/iocVars.cpp
+SOURCES += $(APPSRC)/dev/iocVars.cpp
 
+# Deploy build versions
 HEADERS += $(APPSRC)/version.h
+iocVars$(DEP): 
+	$(PERL) -I$(EPICS_BASE)/lib/perl $(where_am_I)$(APPSRC)/genVersionHeader.pl -t "" -V $(E3_MODULE_VERSION) -N SCE_VERSION $(where_am_I)$(APPSRC)/version.h
+	#$(PERL) -I$(EPICS_BASE)/lib/perl $(where_am_I)$(APPSRC)/genVersionHeader.pl -t "" -V $(E3_MODULE_VERSION) -N SCE_VERSION $^
 
-iocVars$(DEP): version.h
-
-version.h: 
-	$(info ************  version.h ************)
-	$(RM) $@
-	$(PERL) -I$(EPICS_BASE)/lib/perl $(where_am_I)$(APPSRC)/genVersionHeader.pl -t "" -V $(E3_MODULE_VERSION) -N SCE_VERSION $(where_am_I)$(APPSRC)/$@
+# version.h: 
+# 	$(RM) $@
+# 	$(PERL) -I$(EPICS_BASE)/lib/perl $(where_am_I)$(APPSRC)/genVersionHeader.pl -t "" -V $(E3_MODULE_VERSION) -N SCE_VERSION $(where_am_I)$(APPSRC)/$@
 
 # DBDS += $(APPSRC)/calcSupport_LOCAL.dbd
 # DBDS += $(APPSRC)/calcSupport_withSNCSEQ.dbd
@@ -128,7 +129,7 @@ version.h:
 
 # DBDS += $(APPSRC)/aiSecond.dbd
 # DBDS += $(APPSRC)/base.dbd
-DBDS += $(APPSRC)/devs.dbd
+DBDS += $(APPSRC)/dev/devs.dbd
 
 #
 # $(DBDINC_DEPS): $(DBDINC_HDRS)
