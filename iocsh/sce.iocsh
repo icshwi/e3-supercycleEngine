@@ -4,7 +4,7 @@
 dbLoadRecords "engine.db"       "P=$(P)"
 dbLoadRecords "gplug.db"        "P=$(P), PG=$(PG)"
 dbLoadRecords "io.db"           "P=$(P)"
-dbLoadRecords "iofbk.db"        "P=$(P)"
+dbLoadRecords "dbufrb.db"       "P=$(P)"
 dbLoadRecords "ctrl.db"         "P=$(P)"
 dbLoadRecords "states.db"       "P=$(P)"
 

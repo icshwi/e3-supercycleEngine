@@ -48,7 +48,7 @@ USR_INCLUDES += -I$(where_am_I)$(APPSRC)
 # USR_CPPFLAGS += -Wno-unused-function
 # USR_CPPFLAGS += -Wno-unused-but-set-variable
 
-USR_CXXFLAGS += -std=c++11 -g3 -Wall -Wextra -Wno-deprecated-declarations
+USR_CXXFLAGS += -std=c++11 -g3 -Wall -Wextra -Wno-deprecated-declarations -Wfatal-errors
 
 # TEMPLATES += $(wildcard $(APPDB)/*.db)
 # TEMPLATES += $(wildcard $(APPDB)/*.db)
@@ -109,13 +109,13 @@ SOURCES += $(APPSRC)/dev/devEngine.cpp
 SOURCES += $(APPSRC)/dev/devASubBuf.cpp
 SOURCES += $(APPSRC)/dev/devStringoutCtrl.cpp
 SOURCES += $(APPSRC)/dev/cmdMapStrOut.cpp
-SOURCES += $(APPSRC)/dev/devObjPropStringIO.cpp
+SOURCES += $(APPSRC)/dev/devStringIOObjProp.cpp
 # Env last
-SOURCES += $(APPSRC)/dev/iocVars.cpp
+#SOURCES += $(APPSRC)/dev/iocVars.cpp
 
 # Deploy build versions
 HEADERS += $(APPSRC)/version.h
-iocVars$(DEP): 
+object$(DEP): 
 	$(PERL) -I$(EPICS_BASE)/lib/perl $(where_am_I)$(APPSRC)/genVersionHeader.pl -t "" -V $(E3_MODULE_VERSION) -N SCE_VERSION $(where_am_I)$(APPSRC)/version.h
 	#$(PERL) -I$(EPICS_BASE)/lib/perl $(where_am_I)$(APPSRC)/genVersionHeader.pl -t "" -V $(E3_MODULE_VERSION) -N SCE_VERSION $^
 
