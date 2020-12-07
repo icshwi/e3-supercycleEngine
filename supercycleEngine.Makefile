@@ -48,7 +48,7 @@ USR_INCLUDES += -I$(where_am_I)$(APPSRC)
 # USR_CPPFLAGS += -Wno-unused-function
 # USR_CPPFLAGS += -Wno-unused-but-set-variable
 
-USR_CXXFLAGS += -std=c++11 -g3 -Wall -Wextra -Wno-deprecated-declarations -Wfatal-errors
+USR_CXXFLAGS += -std=c++11 -g3 -Wall -Wextra -Wno-deprecated-declarations -Wfatal-errors -fdiagnostics-color
 
 # TEMPLATES += $(wildcard $(APPDB)/*.db)
 # TEMPLATES += $(wildcard $(APPDB)/*.db)
@@ -92,8 +92,9 @@ TEMPLATES += $(wildcard $(APPDB)/*.db)
 #SOURCES += $(APPSRC)/devAiSecond.c
 
 # SRC libraries
-SOURCES += $(APPSRC)/dlog/dlog.cpp
-SOURCES += $(APPSRC)/cmn/cmnbase.cpp
+SOURCES += $(APPSRC)/deps/dlog/dlog.cpp
+SOURCES += $(APPSRC)/deps/dperf/dperf.cpp
+SOURCES += $(APPSRC)/deps/cmn/cmnbase.cpp
 SOURCES += $(APPSRC)/sce/dbuf.cpp
 SOURCES += $(APPSRC)/sce/seq.cpp
 SOURCES += $(APPSRC)/sce/sce.cpp
