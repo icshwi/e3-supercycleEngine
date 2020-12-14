@@ -8,9 +8,10 @@ dbLoadRecords "ctrl.db"         "P=$(P)"
 dbLoadRecords "io.db"           "P=$(P)"
 dbLoadRecords "ioinfo.db"       "P=$(P)"
 
-mapStrOut "databufferLink"      "$(DBUFL=$(reftabs_DIR=/opt/reftabs)/init/databuffer-ess.yml)"
-mapStrOut "mevtsLink"           "$(MEVTSL=$(reftabs_DIR=/opt/reftabs)/init/mevts-ess.yml)"
-mapStrOut "sctableRoot"         "$(reftabs_DIR=/opt/reftabs)/supercycles/"
+mapStrOut "DBufCfgPath"      "$(DBUFP=$(reftabs_DIR=/opt/reftabs)/init/databuffer-ess.yml)"
+mapStrOut "MEvtsCfgPath"     "$(MEVTSP=$(reftabs_DIR=/opt/reftabs)/init/mevts-ess.yml)"
+mapStrOut "ScECfgPath"       "$(SCECFGP=$(reftabs_DIR=/opt/reftabs)/init/sceconfig-ess.yml)"
+mapStrOut "ScTableDir"       "$(reftabs_DIR=/opt/reftabs)/supercycles/"
 
 var "iodebug" "4"
 #var PscUs 888
