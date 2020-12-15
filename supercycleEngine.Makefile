@@ -108,10 +108,12 @@ SOURCES += $(APPSRC)/io/ioblock.cpp
 SOURCES += $(APPSRC)/dev/object.cpp
 SOURCES += $(APPSRC)/dev/devExtension.cpp
 SOURCES += $(APPSRC)/dev/devEngine.cpp
+SOURCES += $(APPSRC)/dev/devEngineExt.cpp
 SOURCES += $(APPSRC)/dev/devASubBuf.cpp
 SOURCES += $(APPSRC)/dev/devStringoutCtrl.cpp
 SOURCES += $(APPSRC)/dev/cmdMapStrOut.cpp
 SOURCES += $(APPSRC)/dev/devStringIOObjProp.cpp
+SOURCES += $(APPSRC)/dev/devIO.cpp
 # Env last
 #SOURCES += $(APPSRC)/dev/iocVars.cpp
 
