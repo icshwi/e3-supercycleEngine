@@ -101,8 +101,8 @@ SOURCES += $(APPSRC)/sce/seq.cpp
 SOURCES += $(APPSRC)/sce/cycle.cpp
 SOURCES += $(APPSRC)/sce/scenv.cpp
 #SOURCES += $(APPSRC)/io/iobase.cpp
-SOURCES += $(APPSRC)/io/yml.cpp
-SOURCES += $(APPSRC)/io/csv.cpp
+SOURCES += $(APPSRC)/sce/yml.cpp
+SOURCES += $(APPSRC)/sce/csv.cpp
 SOURCES += $(APPSRC)/io/ioblock.cpp
 # Devs
 SOURCES += $(APPSRC)/dev/object.cpp
