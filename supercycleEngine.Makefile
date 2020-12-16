@@ -103,7 +103,7 @@ SOURCES += $(APPSRC)/sce/scenv.cpp
 #SOURCES += $(APPSRC)/io/iobase.cpp
 SOURCES += $(APPSRC)/sce/yml.cpp
 SOURCES += $(APPSRC)/sce/csv.cpp
-SOURCES += $(APPSRC)/io/ioblock.cpp
+SOURCES += $(APPSRC)/sce/reg.cpp
 # Devs
 SOURCES += $(APPSRC)/dev/object.cpp
 SOURCES += $(APPSRC)/dev/devExtension.cpp
