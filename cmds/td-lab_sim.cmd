@@ -13,3 +13,6 @@ dbLoadRecords "$(TOP)/db/devg.db" "P=$(PEVG)"
 iocshLoad     "$(supercycleEngine_DIR)/sce.iocsh"   "P=$(PSCE), PG=$(PEVG)"
 #var "iodebug" "3"
 iocInit
+
+dbl > /tmp/sce.iface
+system "grep '[^_]$' /tmp/sce.iface | grep -v EVG | grep -v REQMOD > $(TOP)/docs/sce.iface"
