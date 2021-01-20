@@ -1,4 +1,7 @@
 # e3-supercycleEngine
+# Migration notice
+
+This repository has been migrated to https://gitlab.esss.lu.se/e3/ts/e3-supercycleengine
 
 # Introduction
 
